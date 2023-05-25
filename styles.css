@@ -22,8 +22,16 @@ button {
     font-weight: 700;
 }
 
+.primary{
+    
+}
+
+.secondary{
+
+}
 
 
+/* Map */
 #map {
     height: 800px;
     width: 400px;
