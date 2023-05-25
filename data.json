@@ -1,0 +1,21 @@
+{
+    "seal" : {
+        "title" : "Centennial Seal",
+        "address" : "604 2nd St, Davis, CA 95616",
+        "intro": "",
+        "p1" : "Commissioned by the City of Davis and made by artist Susan Shelton, the Davis Centennial Seal depicts the history of the city since its founding in 1917.",
+        "p2" : "Carved in clay and cast in bronze, the seal, modeled after a bike wheel illustrates the various aspects of Davis life and history. ",
+        "p3": "Some events that illustrated are the founding of Davis as Davisville, the introduction of the railroads and Interstate 80, and the founding of UC Davis as the University Farm.",
+        "img": "seal.png"
+    },
+
+    "bike" : {
+        "title" : "US Bicycling Hall of Fame",
+        "address" : "303 3rd St, Davis, CA 95616",
+        "p1" : "The US Bicycling Hall of Fame was founded in 1986 in Somerville, New Jersey. In 2008, Davis won a nationwide competition to be the new city to host the museum. Since then, Davis has been proud to showcase and celebrate the history of American bicycling.",
+        "p2" : "Davis is known for it’s bicycle friendly community and city. Its flat landscape makes it the best environment for biking.",
+        "p3": "Did you know that the very first official bike lane was created in Davis in 1967?",
+        "img": "bike.png"
+    }
+
+}

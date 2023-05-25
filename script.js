@@ -15,6 +15,7 @@ const THREE = window.MINDAR.FACE.THREE;
     const instructions = document.querySelector('#homepage .secondary');
     const camera = document.querySelector('#camera');
     const faceFilterSection = document.querySelector('#facefilter');
+    const backMap = document.querySelector('#backMap');
 
     // Show/hide functions
     startBtn.addEventListener('click', function(){
@@ -23,32 +24,47 @@ const THREE = window.MINDAR.FACE.THREE;
     })
 
     // Davis Leaflet Map
-    var map = L.map('map').setView([38.544087, -121.743363],13);
+    var map = L.map('map').setView([38.544087, -121.743363],15);
+
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);  
+      maxZoom: 15,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
 
-    centralpark.addEventListener("touchstart", function (){
-        popup.classList.replace("hidden", "showing")
-    });
+    centralpark.bindPopup("<b>Central Park</b><br>Community park and home of the Farmer's Market<br><a href='https://goo.gl/maps/g8gvunNGbCxnTUy39?coh=178571&entry=tt' target='blank'>Directions</a>").openPopup();
 
-    var bikemuseum = L.marker([38.5443, -121.7443]).addTo(map);
 
-    var arb = L.marker([38.5402, -121.7417]).addTo(map);
+    // var map = L.map('map').setView([38.544087, -121.743363],13);
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // maxZoom: 19,
+    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);  
 
-    var seal = L.marker([38.5432, -121.7406]).addTo(map);
+    // var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
 
-    var egghead = L.marker([38.5419, -121.7478]).addTo(map);
+    // centralpark.addEventListener("touchstart", function (){
+    //     popup.classList.replace("hidden", "showing")
+    // });
 
-    var train = L.marker([38.5436, -121.7376]).addTo(map);
+    // var bike = L.marker([38.5443, -121.7443]).addTo(map);
+
+    // var arb = L.marker([38.5402, -121.7417]).addTo(map);
+
+    // var seal = L.marker([38.5432, -121.7406]).addTo(map);
+
+    // var egghead = L.marker([38.5419, -121.7478]).addTo(map);
+
+    // var train = L.marker([38.5436, -121.7376]).addTo(map);
 
 
 
     // Face Filter
-
+    backMap.addEventListener('click', function(){
+      homePage.className = 'showing';
+      faceFilterSection.className = 'hidden';
+    });
     document.addEventListener('DOMContentLoaded', () => {
         const start = async() => {
             const mindarThree = new window.MINDAR.FACE.MindARThree({
