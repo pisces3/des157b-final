@@ -1,5 +1,31 @@
-#map { 
-    height: 800px; 
-    width:400px;
-    margin:auto;
+/* Design System */
+
+body {
+    background-color: #FFFBF1;
+    color: #171717;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    background-color: #17C170;
+    border-radius: 100px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 11px 21px;
+    margin: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+
+
+#map {
+    height: 800px;
+    width: 400px;
+    margin: auto;
 }
