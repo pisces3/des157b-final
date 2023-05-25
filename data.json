@@ -12,6 +12,7 @@
     "bike" : {
         "title" : "US Bicycling Hall of Fame",
         "address" : "303 3rd St, Davis, CA 95616",
+        "intro": "Exhibiting bikes and cyclists throughout American history.",
         "p1" : "The US Bicycling Hall of Fame was founded in 1986 in Somerville, New Jersey. In 2008, Davis won a nationwide competition to be the new city to host the museum. Since then, Davis has been proud to showcase and celebrate the history of American bicycling.",
         "p2" : "Davis is known for it’s bicycle friendly community and city. Its flat landscape makes it the best environment for biking.",
         "p3": "Did you know that the very first official bike lane was created in Davis in 1967?",
