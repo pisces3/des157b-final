@@ -13,6 +13,9 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <!-- stylesheet  -->
     <link href="styles.css" rel="stylesheet"/>
 
@@ -27,17 +30,25 @@
     <title>Final Project</title>
 </head>
 <body>
-    <section id="homepage">
+    <section id="homepage" class="showing">
         <h1>Davis</h1>
         <h1>Destinations</h1>
 
-        <button class="primary">Start Now</button>
-        <button class="secondary">Instructions</button>
+        <section id="buttons">
+            <button class="primary">Start Now</button>
+            <button class="secondary">Instructions</button>
+        </section>
+
+        <!-- <div>
+            <img src="images/responsive-grass.svg" alt="fake grass graphic" id="grass">
+        </div> -->
+
     </section>
 
-    <section id="mappage">
+    <section id="mappage" class="hidden">
+        <div><i class="fas fa-long-arrow-left"></i></div>
         <!-- I'm not sure if this is should be a section or something else? -->
-        <section class="popup" id="centennialseal"> 
+        <section class="popup hidden" id="centennialseal"> 
             <img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
             <h2>Centennial Seal</h2>
             <p>604 2nd St, Davis, CA 95616</p>
@@ -50,7 +61,7 @@
         <div id="map"></div>
     </section>
 
-    <section id="placeinfo">
+    <section id="placeinfo" class="hidden">
         <img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
         <h2>Centennial Seal</h2>
         <p>Commissioned by the City of Davis and made by Susan Shelton, the the Davis Centennial Seal depicts the history of the city since its founding in 1917.</p>
@@ -59,7 +70,7 @@
         <button class="primary">Launch Face Filter</button>
     </section>
 
-    <section id="facefilter">
+    <section id="facefilter" class="hidden">
         <button class="primary">Back to Map</button>
     </section>
     
