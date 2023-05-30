@@ -5,8 +5,7 @@
 }
 
 body {
-    background-color: red;
-    /* background-color: #FFFBF1; */
+    background-color: #FFFBF1;
     color: #171717;
     /* background-image: url('images/homepage.png'); */
 }
@@ -76,8 +75,8 @@ button:hover {
 
 /* Map */
 #map {
-    height: 400px;
-    width: 300px;
+    height: 100vh;
+    width: 100%;
 }
 
 .fas.fa-long-arrow-left {

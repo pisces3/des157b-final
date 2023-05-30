@@ -2,11 +2,13 @@
     "seal" : {
         "title" : "Centennial Seal",
         "address" : "604 2nd St, Davis, CA 95616",
-        "intro": "",
+        "intro": "Come learn about the history of Davis",
         "p1" : "Commissioned by the City of Davis and made by artist Susan Shelton, the Davis Centennial Seal depicts the history of the city since its founding in 1917.",
         "p2" : "Carved in clay and cast in bronze, the seal, modeled after a bike wheel illustrates the various aspects of Davis life and history. ",
         "p3": "Some events that illustrated are the founding of Davis as Davisville, the introduction of the railroads and Interstate 80, and the founding of UC Davis as the University Farm.",
-        "img": "seal.png"
+        "img": "seal.png", 
+        "latitude": "38.5432",
+        "longitude": "-121.7406"
     },
 
     "bike" : {
@@ -16,7 +18,9 @@
         "p1" : "The US Bicycling Hall of Fame was founded in 1986 in Somerville, New Jersey. In 2008, Davis won a nationwide competition to be the new city to host the museum. Since then, Davis has been proud to showcase and celebrate the history of American bicycling.",
         "p2" : "Davis is known for it's bicycle friendly community and city. Its flat landscape makes it the best environment for biking.",
         "p3": "Did you know that the very first official bike lane was created in Davis in 1967?",
-        "img": "bike.png"
+        "img": "bike.png",
+        "latitude": "38.5443",
+        "longitude": "-121.7443"
     },
 
     "centralpark" : {
@@ -26,7 +30,9 @@
         "p1" : "Central Park is the heart of the City of Davis. It is home to the Farmer's Market on Saturday mornings and Wednesday afternoons featuring local produce and food. Many families and students enjoy picnics on the grass enjoying the sunshine.",
         "p2" : "It is also close to many local restaurants and businesses like Burgers and Brew, Crepeville, and Yoloberry.",
         "p3": "Have visited the carousel in Central Park?",
-        "img": "bike.png"
+        "img": "bike.png",
+        "latitude": "38.5453",
+        "longitude": "-121.7445"
     }, 
 
     "egghead" : {
@@ -36,7 +42,9 @@
         "p1" : "Artist and UC Davis Professor Robert Arneson began installing Egghead bronze sculptures on campus in 1991. There are five eggheads scattered around campus with the Stargazer being closest to downtown and the last to be installed in 1994.",
         "p2" : "Eggheads were meant to add some fun and a bit of quirkiness to college life. They are one of the most unique and defining monuments on the UC Davis campus.",
         "p3": "Which egghead is your favorite?",
-        "img": "bike.png"
+        "img": "bike.png",
+        "latitude": "38.5419",
+        "longitude": "-121.7478"
     },
 
     "amtrak" : {
@@ -46,7 +54,9 @@
         "p1" : "The California Pacific Railroad built the first railroad station here in 1868. In 1913, the Southern Pacific built a new station to be big enough for the growing University of California, University Farm which later became UC Davis.",
         "p2" : "This railroad station made it easier for students, goods, and workers to come to Davis and grow the city. Currently, this station continues to connect Davis to the Bay Area and Sacramento city areas as the Amtrak Station.",
         "p3": "Have you ever taken the train before?",
-        "img": "bike.png"
+        "img": "bike.png",
+        "latitude": "38.5436",
+        "longitude": "-121.7376"
     },
 
     "arboretum" : {
@@ -56,7 +66,9 @@
         "p1" : "The Arboretum is over 100 acres of gardens, streams, and grasslands at the southern edge of the UC Davis campus. Home to many ducks, squirrels, and llamas among other animals, the arboretum is one of the most unique places in Davis.",
         "p2" : "Some popular spots include the redwood grove, Lake Spafford, and the Arboretum Teaching Nursery.",
         "p3": "You will often spot students and locals taking a walk, bike, or a rest here.",
-        "img": "bike.png"
+        "img": "bike.png",
+        "latitude": "38.5402",
+        "longitude": "-121.7417"
     }
 
 }

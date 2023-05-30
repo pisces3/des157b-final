@@ -5,10 +5,20 @@ const THREE = window.MINDAR.FACE.THREE;
 
     //Variables
 
+    //Data
+    let globalData; 
+
+    async function getData(){
+    const myData = await fetch ("data.json");
+    const data = await myData.json();
+    globalData = data;
+    }
+
     //Pages
     const homePage = document.querySelector('#homepage');
     const mapPage = document.querySelector('#mappage');
-    const popup = document.querySelectorAll(".popup")
+    const popup = document.querySelectorAll(".popup");
+    const placeinfo = document.querySelector("#placeinfo");
 
     //Buttons
     const startBtn = document.querySelector('#homepage .primary');
@@ -16,12 +26,21 @@ const THREE = window.MINDAR.FACE.THREE;
     const camera = document.querySelector('#camera');
     const faceFilterSection = document.querySelector('#facefilter');
     const backMap = document.querySelector('#backMap');
+    const nextSection = document.querySelector("#next");
+    console.log(nextSection);
 
     // Show/hide functions
     startBtn.addEventListener('click', function(){
         homePage.className = 'hidden';
         mapPage.className = 'showing';
     })
+
+    nextSection.addEventListener("click", function(){
+      mapPage.className = "hidden";
+      placeinfo.className = "showing";
+
+    })
+
 
     // Davis Leaflet Map
     var map = L.map('map').setView([38.544087, -121.743363],15);
@@ -32,23 +51,25 @@ const THREE = window.MINDAR.FACE.THREE;
   }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
+    centralpark.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary" id="centralparkBTN">I'm Here</button>`).openPopup();
 
-    centralpark.bindPopup("<b>Central Park</b><br>Community park and home of the Farmer's Market<br><a href='https://goo.gl/maps/g8gvunNGbCxnTUy39?coh=178571&entry=tt' target='blank'>Directions</a>").openPopup();
+    var bike = L.marker([38.5443, -121.7443]).addTo(map);
+    bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary" id="bikeBTN">I'm Here</button>`).openPopup();
 
+    var arboretum = L.marker([38.5402, -121.7417]).addTo(map);
+    arboretum.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary" id="arboretumBTN">I'm Here</button>`).openPopup();
 
-    // var bike = L.marker([38.5443, -121.7443]).addTo(map);
+    var seal = L.marker([38.5432, -121.7406]).addTo(map);
+    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="100"><br><b>Centennial Seal</b><br>Davis, CA 95616<br>Come learn about the history of Davis.<br><button class= "primary" id="sealBTN">I'm Here</button>`).openPopup();
 
-    // var arb = L.marker([38.5402, -121.7417]).addTo(map);
+    var egghead = L.marker([38.5419, -121.7478]).addTo(map);
+    egghead.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary" id="eggheadBTN">I'm Here</button>`).openPopup();
 
-    // var seal = L.marker([38.5432, -121.7406]).addTo(map);
-
-    // var egghead = L.marker([38.5419, -121.7478]).addTo(map);
-
-    // var train = L.marker([38.5436, -121.7376]).addTo(map);
+    var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
+    amtrak.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary" id="amtrakBTN">I'm Here</button>`).openPopup();
 
   // Json Data 
 
-  // let globalData; 
     
   //   async function getData(){
   //   const myData = await fetch ("data.json");
@@ -58,7 +79,6 @@ const THREE = window.MINDAR.FACE.THREE;
   //   document.querySelector("#daybutton").innerHTML = createButton(data);
   //   createEvents();
   //   }
-
 
   //   function createButton(data){
   //       let htmlButton = ""
