@@ -25,7 +25,7 @@ const THREE = window.MINDAR.FACE.THREE;
     //Buttons
     const startBtn = document.querySelector('#homepage .primary');
     const instructions = document.querySelector('#homepage .secondary');
-    const camera = document.querySelector('#camera');
+    const cameras = document.querySelectorAll('.camera');
     const faceFilterSection = document.querySelector('#facefilter');
     const backMap = document.querySelector('#backMap');
     const back = document.querySelector("#back");
@@ -103,9 +103,12 @@ const THREE = window.MINDAR.FACE.THREE;
 
     // Face Filter
     backMap.addEventListener('click', function(){
-      homePage.className = 'showing';
+      console.log('clicking back to map button');
+      homePage.className = 'hidden';
       faceFilterSection.className = 'hidden';
+      mapPage.className = 'showing';
     });
+
     document.addEventListener('DOMContentLoaded', () => {
         const start = async() => {
             const mindarThree = new window.MINDAR.FACE.MindARThree({
@@ -132,11 +135,14 @@ const THREE = window.MINDAR.FACE.THREE;
             renderer.render(scene, camera);
           });
         }
-        camera.addEventListener('click', () => {
+        cameras.forEach((camera) => {
+          camera.addEventListener('click', () => {
             faceFilterSection.className = 'showing';
             homePage.className = 'hidden';
+            placeinfo.className = 'hidden';
             start();
           });
+        });
     });
     
       
