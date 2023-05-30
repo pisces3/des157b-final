@@ -93,6 +93,18 @@ button:hover {
 
 }
 
+/* info section */
+
+#placeinfo{
+    margin:10%;
+    overflow: hidden;
+}
+
+#placeinfo p{
+    padding-top:10px;
+}
+
+
 
 /* Face filter */
 #facefilter {
