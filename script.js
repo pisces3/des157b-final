@@ -1,4 +1,4 @@
-import {loadGLTF, loadTexture} from "/libs/loader.js";
+import {loadGLTF, loadTexture} from "./libs/loader.js";
 const THREE = window.MINDAR.FACE.THREE;
 
 (function(){
