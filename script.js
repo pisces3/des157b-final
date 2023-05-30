@@ -36,18 +36,6 @@ const THREE = window.MINDAR.FACE.THREE;
     centralpark.bindPopup("<b>Central Park</b><br>Community park and home of the Farmer's Market<br><a href='https://goo.gl/maps/g8gvunNGbCxnTUy39?coh=178571&entry=tt' target='blank'>Directions</a>").openPopup();
 
 
-    // var map = L.map('map').setView([38.544087, -121.743363],13);
-    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    // maxZoom: 19,
-    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    // }).addTo(map);  
-
-    // var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
-
-    // centralpark.addEventListener("touchstart", function (){
-    //     popup.classList.replace("hidden", "showing")
-    // });
-
     // var bike = L.marker([38.5443, -121.7443]).addTo(map);
 
     // var arb = L.marker([38.5402, -121.7417]).addTo(map);
@@ -57,6 +45,54 @@ const THREE = window.MINDAR.FACE.THREE;
     // var egghead = L.marker([38.5419, -121.7478]).addTo(map);
 
     // var train = L.marker([38.5436, -121.7376]).addTo(map);
+
+  // Json Data 
+
+  // let globalData; 
+    
+  //   async function getData(){
+  //   const myData = await fetch ("data.json");
+  //   const data = await myData.json();
+  //   globalData = data;
+  //   const dayimg = document.querySelector("#dayimg");
+  //   document.querySelector("#daybutton").innerHTML = createButton(data);
+  //   createEvents();
+  //   }
+
+
+  //   function createButton(data){
+  //       let htmlButton = ""
+  //       const dataPoints = Object.keys(data);
+  //       console.log(dataPoints);
+  //       dataPoints.forEach(function(eachPoint){
+  //           htmlButton += `<button id="${eachPoint}">${eachPoint}</button>`;
+  //       });
+  //       return htmlButton;
+  //   }
+
+  //   function createEvents(){
+  //       const buttons = document.querySelectorAll('button');
+    
+  //       for (const button of buttons){
+  //           button.addEventListener('click', function(event){
+  //               const id = event.target.id; 
+  //               console.log(id)
+  //               updateInterface(id, globalData);
+  //           })
+  //       }
+  //   }
+
+  //   function updateInterface(value, jsonData){
+  //       let text = '';
+  //       text+= `<h2>${jsonData[value].date}</h2>
+  //       <p>${jsonData[value].time}</p>
+  //       <img src="images/${jsonData[value].img}" alt="${jsonData[value].alt}">
+  //       <p>${jsonData[value].location}</p>`
+    
+  //       document.querySelector('#dayimg').innerHTML = text;
+  //   }
+
+  //   getData();
 
 
 
