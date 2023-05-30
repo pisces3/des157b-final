@@ -30,6 +30,14 @@ const THREE = window.MINDAR.FACE.THREE;
     const backMap = document.querySelector('#backMap');
     const back = document.querySelector("#back");
 
+    //Face Filters
+    const centennial = document.querySelector('#seal');
+    const market = document.querySelector('#market');
+    const arbs = document.querySelector('#arboretum');
+    const railroad = document.querySelector('#railroad');
+    const bicycle = document.querySelector('#bike');
+    const eggHead = document.querySelector('#egghead');
+
     // Show/hide functions
     startBtn.addEventListener('click', function(){
         homePage.className = 'hidden';
@@ -142,6 +150,14 @@ const THREE = window.MINDAR.FACE.THREE;
             placeinfo.className = 'hidden';
             start();
           });
+        });
+
+        centennial.addEventListener('click', async () => {
+          // const texture = await loadTexture('assets/seal.png');
+          // const faceMesh = mindarThree.addFaceMesh();
+          // faceMesh.material.map = texture;
+          // faceMesh.material.transparent = true;
+          // faceMesh.material.needsUpdate = true;
         });
     });
     
