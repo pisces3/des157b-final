@@ -70,8 +70,6 @@ const THREE = window.MINDAR.FACE.THREE;
 
   // Json Data 
 
-  
-
     function createEvents(){
         const buttons = document.querySelectorAll('.popBTN');
         console.log(buttons);
