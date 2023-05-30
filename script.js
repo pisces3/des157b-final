@@ -81,7 +81,7 @@ const THREE = window.MINDAR.FACE.THREE;
                 updateInterface(id, globalData);
                 placeinfo.className = "showing";
                 mapPage.className = "hidden";
-
+                console.log('clicking popbtn');
             })
         }
     }
