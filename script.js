@@ -122,7 +122,7 @@ const THREE = window.MINDAR.FACE.THREE;
           //facemesh variable ; different from anchor; returned face mesh 
           const faceMesh = mindarThree.addFaceMesh();
           // const texture = await loadTexture("../../assets/facemesh/face-mask-template/Face_Mask_Template.png");
-          const texture = await loadTexture("/assets/Face_Mask_Template.png");
+          const texture = await loadTexture("assets/egghead.png");
       
           faceMesh.material.map = texture;
           faceMesh.material.transparent = true;
