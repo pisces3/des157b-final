@@ -41,12 +41,12 @@ const THREE = window.MINDAR.FACE.THREE;
     // Show/hide functions
     startBtn.addEventListener('click', function(){
         homePage.className = 'hidden';
-        mapPage.className = 'showing';
+        mapPage.style.opacity = '1';
     })
 
     back.addEventListener('click', function(){
       placeinfo.className = "hidden";
-      mapPage.className = 'showing';
+      mapPage.style.opacity = '1';
     })
 
 
@@ -89,6 +89,7 @@ const THREE = window.MINDAR.FACE.THREE;
                 updateInterface(id, globalData);
                 placeinfo.className = "showing";
                 mapPage.className = "hidden";
+                mapPage.style.opacity = '0';
                 console.log('clicking popbtn');
             })
         }
@@ -115,6 +116,8 @@ const THREE = window.MINDAR.FACE.THREE;
       homePage.className = 'hidden';
       faceFilterSection.className = 'hidden';
       mapPage.className = 'showing';
+      mapPage.style.opacity = '1';
+
     });
 
     document.addEventListener('DOMContentLoaded', () => {
