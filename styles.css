@@ -74,6 +74,15 @@ button:hover {
 }
 
 /* Map */
+
+#mappage{
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:-1;
+    opacity:0;
+}
+
 #map {
     height: 900px;
     width: 500px;
