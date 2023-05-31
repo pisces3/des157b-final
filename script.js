@@ -46,6 +46,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
     back.addEventListener('click', function(){
       placeinfo.className = "hidden";
+      mapPage.className = 'showing';
       mapPage.style.opacity = '1';
     })
 
