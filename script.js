@@ -3,6 +3,8 @@ const THREE = window.MINDAR.FACE.THREE;
 
 (function(){
 
+  alert('Hello, fellow tester! Welcome to Davis Destinations! \r Here, you’ll get to learn more about the different places around Davis and know more about their history. \r Here are some tasks we prepared for you: \r1. Click the buttons for each place to try out the face filter. \r2. Go to map Read the location pop-ups. \r3. Click “I’m Here"Learn more about the detailed history of each Davis Destination')
+
     //Variables
 
     //Data
