@@ -12,7 +12,7 @@ const THREE = window.MINDAR.FACE.THREE;
     const myData = await fetch ("data.json");
     const data = await myData.json();
     globalData = data;
-    createEvents();
+    // createEvents();
     }
     
 
@@ -60,53 +60,65 @@ const THREE = window.MINDAR.FACE.THREE;
   }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
-    centralpark.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`).openPopup();
+    centralpark.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
 
     var bike = L.marker([38.5443, -121.7443]).addTo(map);
-    bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`).openPopup();
+    bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
 
     var arboretum = L.marker([38.5402, -121.7417]).addTo(map);
-    arboretum.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`).openPopup();
+    arboretum.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
 
     var seal = L.marker([38.5432, -121.7406]).addTo(map);
-    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="100"><br><b>Centennial Seal</b><br>Davis, CA 95616<br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`).openPopup();
+    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="100"><br><b>Centennial Seal</b><br>Davis, CA 95616<br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
 
     var egghead = L.marker([38.5419, -121.7478]).addTo(map);
-    egghead.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`).openPopup();
+    egghead.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
 
     var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
-    amtrak.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`).openPopup();
+    amtrak.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
 
   // Json Data 
 
-    function createEvents(){
-        const buttons = document.querySelectorAll('.popBTN');
-        console.log(buttons);
+    // function createEvents(){
+    //     const buttons = document.querySelectorAll('.popBTN');
+    //     console.log(buttons);
     
-        for (const button of buttons){
-            button.addEventListener('click', function(event){
-                const id = event.target.id; 
-                console.log(id)
-                updateInterface(id, globalData);
-                placeinfo.className = "showing";
-                mapPage.className = "hidden";
-                mapPage.style.opacity = '0';
-                console.log('clicking popbtn');
-            })
-        }
-    }
+    //     for (const button of buttons){
+    //         button.addEventListener('click', function(event){
+    //             const id = event.target.id; 
+    //             console.log(id)
+    //             updateInterface(id, globalData);
+    //             placeinfo.className = "showing";
+    //             mapPage.className = "hidden";
+    //             mapPage.style.opacity = '0';
+    //             console.log('clicking popbtn');
+    //         })
+    //     }
+    // }
 
     // <img src="images/${jsonData[value].img}" alt="${jsonData[value].alt}"></img>
 
-    function updateInterface(value, jsonData){
-        let text = '';
-        text+= `<img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
-        <h2>${jsonData[value].title}</h2>
-        <p>${jsonData[value].p1}</p>
-        <p>${jsonData[value].p2}</p>
-        <p>${jsonData[value].p3}</p>`
-        document.querySelector("#placetext").innerHTML = text;
+   // from glenda: use event delegation (adding a click listener to the document and then checking what was clicked on) bc the popBTNs are not in the DOM until the marker is clicked. I found this out by using "inspect" and watching the DOM elements change. I can explain more when we talk next.
+   document.addEventListener('click', function(event){
+    console.log(event.target.className);
+    if(event.target.className == 'primary popBTN'){
+      console.log(event.target.id);
+      updateInterface(event.target.id, globalData);
+      placeinfo.className = "showing";
+      mapPage.className = "hidden";
+      mapPage.style.opacity = '0';
     }
+  })
+
+  function updateInterface(value, jsonData){
+    let text = '';
+    text+= `<img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
+    <h2>${jsonData[value].title}</h2>
+    <p>${jsonData[value].p1}</p>
+    <p>${jsonData[value].p2}</p>
+    <p>${jsonData[value].p3}</p>`
+    document.querySelector("#placetext").innerHTML = text;
+}
 
     getData();
 
