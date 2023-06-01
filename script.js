@@ -25,7 +25,8 @@ const THREE = window.MINDAR.FACE.THREE;
     //Buttons
     const startBtn = document.querySelector('#homepage .primary');
     const instructions = document.querySelector('#homepage .secondary');
-    const cameras = document.querySelectorAll('.camera');
+    const faceCamera = document.querySelector('.camera');
+    const cameras = document.querySelectorAll('.primary camera');
     const faceFilterSection = document.querySelector('#facefilter');
     const backMap = document.querySelector('#backMap');
     const back = document.querySelector("#back");
@@ -100,9 +101,9 @@ const THREE = window.MINDAR.FACE.THREE;
 
    // from glenda: use event delegation (adding a click listener to the document and then checking what was clicked on) bc the popBTNs are not in the DOM until the marker is clicked. I found this out by using "inspect" and watching the DOM elements change. I can explain more when we talk next.
    document.addEventListener('click', function(event){
-    console.log(event.target.className);
+    // console.log(event.target.className);
     if(event.target.className == 'primary popBTN'){
-      console.log(event.target.id);
+      // console.log(event.target.id);
       updateInterface(event.target.id, globalData);
       placeinfo.className = "showing";
       mapPage.className = "hidden";
@@ -111,12 +112,15 @@ const THREE = window.MINDAR.FACE.THREE;
   })
 
   function updateInterface(value, jsonData){
+
+    //need to fix changing id for buttons
     let text = '';
     text+= `<img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
     <h2>${jsonData[value].title}</h2>
     <p>${jsonData[value].p1}</p>
     <p>${jsonData[value].p2}</p>
     <p>${jsonData[value].p3}</p>`
+    // <button class='primary camera' id=${jsonData[value].filter}>Launch Face Filter</button>
     document.querySelector("#placetext").innerHTML = text;
 }
 
@@ -125,7 +129,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
     // Face Filter
     backMap.addEventListener('click', function(){
-      console.log('clicking back to map button');
+      // console.log('clicking back to map button');
       homePage.className = 'hidden';
       faceFilterSection.className = 'hidden';
       mapPage.className = 'showing';
@@ -134,47 +138,105 @@ const THREE = window.MINDAR.FACE.THREE;
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-        const start = async() => {
-            const mindarThree = new window.MINDAR.FACE.MindARThree({
-            container: faceFilterSection,
-          });
-          const {renderer, scene, camera} = mindarThree;
-      
-          const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
-          scene.add(light);
-      
-          //facemesh variable ; different from anchor; returned face mesh 
-          const faceMesh = mindarThree.addFaceMesh();
-          // const texture = await loadTexture("../../assets/facemesh/face-mask-template/Face_Mask_Template.png");
-          const texture = await loadTexture("assets/bike.png");
-      
-          faceMesh.material.map = texture;
-          faceMesh.material.transparent = true;
-          faceMesh.material.needsUpdate = true;
-      
-          scene.add(faceMesh);
-      
-          await mindarThree.start();
-          renderer.setAnimationLoop(() => {
-            renderer.render(scene, camera);
-          });
-        }
-        cameras.forEach((camera) => {
-          camera.addEventListener('click', () => {
-            faceFilterSection.className = 'showing';
-            homePage.className = 'hidden';
-            placeinfo.className = 'hidden';
-            start();
-          });
+      let mindarThree;
+      let texture;
+      let faceMesh;
+    
+      const start = async () => {
+        mindarThree = new window.MINDAR.FACE.MindARThree({
+          container: faceFilterSection,
         });
+        const { renderer, scene, camera } = mindarThree;
+    
+        const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+        scene.add(light);
+    
+        faceMesh = mindarThree.addFaceMesh();
+        texture = await loadTexture("assets/bike.png");
+    
+        faceMesh.material.transparent = true;
+        faceMesh.material.needsUpdate = true;
+    
+        scene.add(faceMesh);
+    
+        await mindarThree.start();
+        renderer.setAnimationLoop(() => {
+          renderer.render(scene, camera);
+        });
+      };
 
-        centennial.addEventListener('click', async () => {
-          // const texture = await loadTexture('assets/seal.png');
-          // const faceMesh = mindarThree.addFaceMesh();
-          // faceMesh.material.map = texture;
-          // faceMesh.material.transparent = true;
-          // faceMesh.material.needsUpdate = true;
-        });
+      document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('camera')) {
+          console.log('clicking face camera');
+          faceFilterSection.className = 'showing';
+          homePage.className = 'hidden';
+          placeinfo.className = 'hidden';
+          start();
+        }
+      });
+
+        // faceCamera.addEventListener('click', () => {
+        //   console.log('clicking face camera');
+        //   faceFilterSection.className = 'showing';
+        //   homePage.className = 'hidden';
+        //   placeinfo.className = 'hidden';
+        //   start();
+        // });
+    
+      // cameras.forEach((camera) => {
+      //   camera.addEventListener('click', () => {
+      //     faceFilterSection.className = 'showing';
+      //     homePage.className = 'hidden';
+      //     placeinfo.className = 'hidden';
+      //     start();
+      //   });
+      // });
+
+      //change centennial seal filter
+      centennial.addEventListener('click', async () => {
+        console.log('clicking seal');
+        texture = await loadTexture('assets/seal.png');
+        console.log(texture);
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      });
+
+      //change farmers market seal filter
+      market.addEventListener('click', async () => {
+        console.log('clicking market');
+        texture = await loadTexture('assets/market.png');
+        console.log(texture);
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      });
+
+      //change farmers market seal filter
+      railroad.addEventListener('click', async () => {
+        console.log('clicking market');
+        texture = await loadTexture('assets/railroad.png');
+        console.log(texture);
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      });
+
+      //change bicycle seal filter
+      bicycle.addEventListener('click', async () => {
+        console.log('clicking market');
+        texture = await loadTexture('assets/bike.png');
+        console.log(texture);
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      });
+
+      //change bicycle seal filter
+      eggHead.addEventListener('click', async () => {
+        console.log('clicking market');
+        texture = await loadTexture('assets/egghead.png');
+        console.log(texture);
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      });
+
     });
     
       

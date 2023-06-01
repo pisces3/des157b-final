@@ -8,7 +8,8 @@
         "p3": "Some events that illustrated are the founding of Davis as Davisville, the introduction of the railroads and Interstate 80, and the founding of UC Davis as the University Farm.",
         "img": "seal.png", 
         "latitude": "38.5432",
-        "longitude": "-121.7406"
+        "longitude": "-121.7406",
+        "filter": "seal"
     },
 
     "bike" : {
