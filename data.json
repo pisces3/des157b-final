@@ -21,7 +21,8 @@
         "p3": "Did you know that the very first official bike lane was created in Davis in 1967?",
         "img": "bike.png",
         "latitude": "38.5443",
-        "longitude": "-121.7443"
+        "longitude": "-121.7443",
+        "filter": "bike"
     },
 
     "centralpark" : {
@@ -33,7 +34,8 @@
         "p3": "Have visited the carousel in Central Park?",
         "img": "bike.png",
         "latitude": "38.5453",
-        "longitude": "-121.7445"
+        "longitude": "-121.7445",
+        "filter": "centralpark"
     }, 
 
     "egghead" : {
@@ -45,7 +47,8 @@
         "p3": "Which egghead is your favorite?",
         "img": "bike.png",
         "latitude": "38.5419",
-        "longitude": "-121.7478"
+        "longitude": "-121.7478",
+        "filter": "egghead"
     },
 
     "amtrak" : {
@@ -57,7 +60,8 @@
         "p3": "Have you ever taken the train before?",
         "img": "bike.png",
         "latitude": "38.5436",
-        "longitude": "-121.7376"
+        "longitude": "-121.7376",
+        "filter": "amtrak"
     },
 
     "arboretum" : {
@@ -69,7 +73,8 @@
         "p3": "You will often spot students and locals taking a walk, bike, or a rest here.",
         "img": "bike.png",
         "latitude": "38.5402",
-        "longitude": "-121.7417"
+        "longitude": "-121.7417",
+        "filter": "arboretum"
     }
 
 }

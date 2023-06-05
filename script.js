@@ -3,7 +3,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
 (function(){
 
-  alert('Hello, fellow tester! Welcome to Davis Destinations! \r Here, you’ll get to learn more about the different places around Davis and know more about their history. \r Here are some tasks we prepared for you: \r1. Click the start here button \r2. Go to map and click on the Centennial Seal Pop up\r3. Click “I’m Here" Learn more about the detailed history of each Davis Destination and launch the face filter')
+  // alert('Hello, fellow tester! Welcome to Davis Destinations! \r Here, you’ll get to learn more about the different places around Davis and know more about their history. \r Here are some tasks we prepared for you: \r1. Click the start here button \r2. Go to map and click on the Centennial Seal Pop up\r3. Click “I’m Here" Learn more about the detailed history of each Davis Destination and launch the face filter')
 
     //Variables
 
@@ -34,12 +34,13 @@ const THREE = window.MINDAR.FACE.THREE;
     const back = document.querySelector("#back");
 
     //Face Filters
-    const centennial = document.querySelector('#seal');
-    const market = document.querySelector('#market');
-    const arbs = document.querySelector('#arboretum');
-    const railroad = document.querySelector('#railroad');
-    const bicycle = document.querySelector('#bike');
-    const eggHead = document.querySelector('#egghead');
+    //Laura – Added BTN because other buttons are using these ids on their own
+    const centennial = document.querySelector('#sealBTN');
+    const market = document.querySelector('#centralparkBTN');
+    const arbs = document.querySelector('#arbBTN');
+    const railroad = document.querySelector('#amtrakBTN');
+    const bicycle = document.querySelector('#bikeBTN');
+    const eggHead = document.querySelector('#eggheadBTN');
 
     // Show/hide functions
     startBtn.addEventListener('click', function(){
@@ -82,25 +83,6 @@ const THREE = window.MINDAR.FACE.THREE;
 
   // Json Data 
 
-    // function createEvents(){
-    //     const buttons = document.querySelectorAll('.popBTN');
-    //     console.log(buttons);
-    
-    //     for (const button of buttons){
-    //         button.addEventListener('click', function(event){
-    //             const id = event.target.id; 
-    //             console.log(id)
-    //             updateInterface(id, globalData);
-    //             placeinfo.className = "showing";
-    //             mapPage.className = "hidden";
-    //             mapPage.style.opacity = '0';
-    //             console.log('clicking popbtn');
-    //         })
-    //     }
-    // }
-
-    // <img src="images/${jsonData[value].img}" alt="${jsonData[value].alt}"></img>
-
    // from glenda: use event delegation (adding a click listener to the document and then checking what was clicked on) bc the popBTNs are not in the DOM until the marker is clicked. I found this out by using "inspect" and watching the DOM elements change. I can explain more when we talk next.
    document.addEventListener('click', function(event){
     // console.log(event.target.className);
@@ -122,7 +104,7 @@ const THREE = window.MINDAR.FACE.THREE;
     <p>${jsonData[value].p1}</p>
     <p>${jsonData[value].p2}</p>
     <p>${jsonData[value].p3}</p>`
-    // <button class='primary camera' id=${jsonData[value].filter}>Launch Face Filter</button>
+    // <button class='primary camera' id=${jsonData[value].filter}BTN>Launch Face Filter</button>`
     document.querySelector("#placetext").innerHTML = text;
 }
 
@@ -230,7 +212,7 @@ const THREE = window.MINDAR.FACE.THREE;
         faceMesh.material.needsUpdate = true;
       });
 
-      //change bicycle seal filter
+      //change egghead filter
       eggHead.addEventListener('click', async () => {
         console.log('clicking market');
         texture = await loadTexture('assets/egghead.png');
