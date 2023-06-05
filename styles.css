@@ -105,12 +105,24 @@ button:hover {
 /* info section */
 
 #placeinfo{
-    margin:10%;
+    
     overflow: hidden;
+}
+
+#placeinfo h2{
+    padding-top:10px;
+    margin-left:10%;
+    margin-right:10%;
 }
 
 #placeinfo p{
     padding-top:10px;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+#placeinfo .camera{
+    margin-top:20px;
 }
 
 /* Face filter */
