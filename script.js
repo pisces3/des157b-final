@@ -70,13 +70,13 @@ const THREE = window.MINDAR.FACE.THREE;
     bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
 
     var arboretum = L.marker([38.5402, -121.7417]).addTo(map);
-    arboretum.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
+    arboretum.bindPopup(`<img src= "images/arboretum.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
 
     var seal = L.marker([38.5432, -121.7406]).addTo(map);
     seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="100"><br><b>Centennial Seal</b><br>Davis, CA 95616<br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
 
     var egghead = L.marker([38.5419, -121.7478]).addTo(map);
-    egghead.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
+    egghead.bindPopup(`<img src= "images/egghead.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
 
     var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
     amtrak.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
@@ -98,13 +98,14 @@ const THREE = window.MINDAR.FACE.THREE;
   function updateInterface(value, jsonData){
 
     //need to fix changing id for buttons
+    //Laura 6/5 – adds correct button but not getting it in the DOM
     let text = '';
-    text+= `<img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
+    text+= `<img src='images/${jsonData[value].img}' alt="${jsonData[value].title}" width="402" height="215">
     <h2>${jsonData[value].title}</h2>
     <p>${jsonData[value].p1}</p>
     <p>${jsonData[value].p2}</p>
-    <p>${jsonData[value].p3}</p>`
-    // <button class='primary camera' id=${jsonData[value].filter}BTN>Launch Face Filter</button>`
+    <p>${jsonData[value].p3}</p>
+    <button class='primary camera' id=${jsonData[value].filter}BTN>Launch Face Filter</button>`
     document.querySelector("#placetext").innerHTML = text;
 }
 
@@ -175,6 +176,8 @@ const THREE = window.MINDAR.FACE.THREE;
       //     start();
       //   });
       // });
+
+      
 
       //change centennial seal filter
       centennial.addEventListener('click', async () => {

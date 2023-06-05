@@ -45,7 +45,7 @@
         "p1" : "Artist and UC Davis Professor Robert Arneson began installing Egghead bronze sculptures on campus in 1991. There are five eggheads scattered around campus with the Stargazer being closest to downtown and the last to be installed in 1994.",
         "p2" : "Eggheads were meant to add some fun and a bit of quirkiness to college life. They are one of the most unique and defining monuments on the UC Davis campus.",
         "p3": "Which egghead is your favorite?",
-        "img": "bike.png",
+        "img": "egghead.png",
         "latitude": "38.5419",
         "longitude": "-121.7478",
         "filter": "egghead"
@@ -71,7 +71,7 @@
         "p1" : "The Arboretum is over 100 acres of gardens, streams, and grasslands at the southern edge of the UC Davis campus. Home to many ducks, squirrels, and llamas among other animals, the arboretum is one of the most unique places in Davis.",
         "p2" : "Some popular spots include the redwood grove, Lake Spafford, and the Arboretum Teaching Nursery.",
         "p3": "You will often spot students and locals taking a walk, bike, or a rest here.",
-        "img": "bike.png",
+        "img": "arboretum.png",
         "latitude": "38.5402",
         "longitude": "-121.7417",
         "filter": "arboretum"
