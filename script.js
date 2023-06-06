@@ -54,10 +54,10 @@ const THREE = window.MINDAR.FACE.THREE;
       mapPage.style.opacity = '1';
     })
 
-    // backHome.addEventListener('click', function(){
-    //   homePage.className = 'showing';
-    //   mapPage.style.opacity = '0';
-    // });
+    backHome.addEventListener('click', function(){
+      homePage.className = 'showing';
+      mapPage.style.opacity = '0';
+    });
 
 
     // Davis Leaflet Map
@@ -78,7 +78,7 @@ const THREE = window.MINDAR.FACE.THREE;
     arboretum.bindPopup(`<img src= "images/arboretum.png" class"popupimg" width ="180"><br><b>Arboretum</b><br><i>Davis, CA 95616</i><br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
 
     var seal = L.marker([38.5432, -121.7406]).addTo(map);
-    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="180"><br><b>Centennial Seal</b><br><i>610 2nd St, Davis, CA 95616<i/><br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
+    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="180"><br><b>Centennial Seal</b><br><i>610 2nd St, Davis, CA 95616</i><br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
 
     var egghead = L.marker([38.5419, -121.7478]).addTo(map);
     egghead.bindPopup(`<img src= "images/egghead.png" class"popupimg" width ="180"><br><b>Stargazer Egg Head</b><br><i>North Hall, 180 E Quad, Davis, CA 95616</i><br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
