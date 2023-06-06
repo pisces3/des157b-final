@@ -24,7 +24,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
     //Buttons
     const startBtn = document.querySelector('#homepage .primary');
-    const instructions = document.querySelector('#homepage .secondary');
+    const backHome = document.querySelector('#backHome');
     const faceCamera = document.querySelector('.camera');
     const cameras = document.querySelectorAll('.primary camera');
     const faceFilterSection = document.querySelector('#facefilter');
@@ -42,6 +42,7 @@ const THREE = window.MINDAR.FACE.THREE;
     // Show/hide functions
     startBtn.addEventListener('click', function(){
         homePage.className = 'hidden';
+        mapPage.className = 'showing';
         mapPage.style.opacity = '1';
     })
 
@@ -51,6 +52,25 @@ const THREE = window.MINDAR.FACE.THREE;
       mapPage.style.opacity = '1';
     })
 
+    backHome.addEventListener('click', function(){
+      homePage.className = 'showing';
+      mapPage.style.opacity = '0';
+      placeinfo.className = "hidden";
+    })
+
+  //   function backButton (){
+  //     for (let i = 0; i < sections.length; i++) {
+  //       if (sections[i].id === 'mappage') {
+  //           backHome.className = 'showing';
+  //         } else{
+  //           backHome.className = 'hidden';
+  //         }
+  //   }
+  // }
+
+  //   // backButton();
+
+    
 
     // Davis Leaflet Map
     var map = L.map('map').setView([38.544087, -121.743363],15);
@@ -125,7 +145,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
     //need to fix changing id for buttons
     let text = '';
-    text+= `<img src="images/seal.png" alt="Davis Centennial Seal" width="402" height="215">
+    text+= `<img src="images/${jsonData[value].img}" alt="${jsonData[value].title}" width="402" height="215">
     <h2>${jsonData[value].title}</h2>
     <p>${jsonData[value].p1}</p>
     <p>${jsonData[value].p2}</p>
