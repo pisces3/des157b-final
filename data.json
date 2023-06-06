@@ -32,7 +32,7 @@
         "p1" : "Central Park is the heart of the City of Davis. It is home to the Farmer's Market on Saturday mornings and Wednesday afternoons featuring local produce and food. Many families and students enjoy picnics on the grass enjoying the sunshine.",
         "p2" : "It is also close to many local restaurants and businesses like Burgers and Brew, Crepeville, and Yoloberry.",
         "p3": "Have visited the carousel in Central Park?",
-        "img": "bike.png",
+        "img": "centralpark.png",
         "latitude": "38.5453",
         "longitude": "-121.7445",
         "filter": "centralpark"
@@ -58,7 +58,7 @@
         "p1" : "The California Pacific Railroad built the first railroad station here in 1868. In 1913, the Southern Pacific built a new station to be big enough for the growing University of California, University Farm which later became UC Davis.",
         "p2" : "This railroad station made it easier for students, goods, and workers to come to Davis and grow the city. Currently, this station continues to connect Davis to the Bay Area and Sacramento city areas as the Amtrak Station.",
         "p3": "Have you ever taken the train before?",
-        "img": "bike.png",
+        "img": "amtrak.png",
         "latitude": "38.5436",
         "longitude": "-121.7376",
         "filter": "amtrak"

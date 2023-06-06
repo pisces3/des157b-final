@@ -64,7 +64,7 @@ const THREE = window.MINDAR.FACE.THREE;
   }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
-    centralpark.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
+    centralpark.bindPopup(`<img src= "images/centralpark.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
 
     var bike = L.marker([38.5443, -121.7443]).addTo(map);
     bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
@@ -79,7 +79,7 @@ const THREE = window.MINDAR.FACE.THREE;
     egghead.bindPopup(`<img src= "images/egghead.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
 
     var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
-    amtrak.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
+    amtrak.bindPopup(`<img src= "images/amtrak.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
 
   // Json Data 
 
