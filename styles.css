@@ -105,9 +105,11 @@ button:hover {
     display: inline-block;
 }
 
-.popup img{
-    border-radius: 20px 20px 0px 0px;
 
+.leaflet-popup-content{
+    width:180px;
+    text-align:center;
+    margin: 20px 20px 20px 15px;
 }
 
 #backStart{

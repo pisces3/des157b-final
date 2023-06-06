@@ -69,22 +69,22 @@ const THREE = window.MINDAR.FACE.THREE;
   }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
-    centralpark.bindPopup(`<img src= "images/centralpark.png" class"popupimg"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
+    centralpark.bindPopup(`<img src= "images/centralpark.png" class"popupimg" width ="180"><br><b>Central Park</b><br><i>5th St & B St, Davis, CA 95616</i><br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
 
     var bike = L.marker([38.5443, -121.7443]).addTo(map);
-    bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
+    bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="180"><br><b>US Bicycling Hall of Fame</b><br><i>303 3rd St, Davis, CA 95616</i><br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
 
     var arboretum = L.marker([38.5402, -121.7417]).addTo(map);
-    arboretum.bindPopup(`<img src= "images/arboretum.png" class"popupimg" width ="100"><br><b>Arboretum</b><br>Davis, CA 95616<br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
+    arboretum.bindPopup(`<img src= "images/arboretum.png" class"popupimg" width ="180"><br><b>Arboretum</b><br><i>Davis, CA 95616</i><br>Enjoy a walk in the arboretum along the creek and you may spot squirrels, turkeys, and ducks.<br><button class= "primary popBTN" id="arboretum">I'm Here</button>`);
 
     var seal = L.marker([38.5432, -121.7406]).addTo(map);
-    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="100"><br><b>Centennial Seal</b><br>Davis, CA 95616<br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
+    seal.bindPopup(`<img src= "images/seal.png" class"popupimg" width ="180"><br><b>Centennial Seal</b><br><i>610 2nd St, Davis, CA 95616<i/><br>Come learn about the history of Davis.<br><button class= "primary popBTN" id="seal">I'm Here</button>`);
 
     var egghead = L.marker([38.5419, -121.7478]).addTo(map);
-    egghead.bindPopup(`<img src= "images/egghead.png" class"popupimg" width ="100"><br><b>Stargazer Egg Head</b><br>North Hall, 180 E Quad, Davis, CA 95616<br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
+    egghead.bindPopup(`<img src= "images/egghead.png" class"popupimg" width ="180"><br><b>Stargazer Egg Head</b><br><i>North Hall, 180 E Quad, Davis, CA 95616</i><br>One of five bronze Egghead Sculptures at UC Davis.<br><button class= "primary popBTN" id="egghead">I'm Here</button>`);
 
     var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
-    amtrak.bindPopup(`<img src= "images/amtrak.png" class"popupimg" width ="100"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
+    amtrak.bindPopup(`<img src= "images/amtrak.png" class"popupimg" width ="180"><br><b>Southern Pacific Railroad Station</b><br><i>840 2nd St, Davis, CA 95616</i><br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
 
   // Json Data 
 
