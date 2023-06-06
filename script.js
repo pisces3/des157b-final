@@ -26,7 +26,7 @@ const THREE = window.MINDAR.FACE.THREE;
 
     //Buttons
     const startBtn = document.querySelector('#homepage .primary');
-    const instructions = document.querySelector('#homepage .secondary');
+    // const backHome = document.querySelector('#backHome')
     const faceCamera = document.querySelector('.camera');
     const cameras = document.querySelectorAll('.primary camera');
     const faceFilterSection = document.querySelector('#facefilter');
@@ -54,6 +54,11 @@ const THREE = window.MINDAR.FACE.THREE;
       mapPage.style.opacity = '1';
     })
 
+    // backHome.addEventListener('click', function(){
+    //   homePage.className = 'showing';
+    //   mapPage.style.opacity = '0';
+    // });
+
 
     // Davis Leaflet Map
     var map = L.map('map').setView([38.544087, -121.743363],15);
@@ -64,7 +69,7 @@ const THREE = window.MINDAR.FACE.THREE;
   }).addTo(map);  
 
     var centralpark = L.marker([38.5453, -121.7445]).addTo(map);
-    centralpark.bindPopup(`<img src= "images/centralpark.png" class"popupimg" width ="100"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
+    centralpark.bindPopup(`<img src= "images/centralpark.png" class"popupimg"><br><b>Central Park</b><br>5th St & B St, Davis, CA 95616<br>Home to the Davis Farmer’s Market, playgrounds, and community events.<br><button class= "primary popBTN" id="centralpark">I'm Here</button>`);
 
     var bike = L.marker([38.5443, -121.7443]).addTo(map);
     bike.bindPopup(`<img src= "images/bike.png" class"popupimg" width ="100"><br><b>US Bicycling Hall of Fame</b><br>303 3rd St, Davis, CA 95616<br>Exhibiting bikes and cyclists throughout American history.<br><button class= "primary popBTN" id="bike">I'm Here</button>`);
