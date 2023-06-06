@@ -241,6 +241,10 @@ const THREE = window.MINDAR.FACE.THREE;
         document.querySelector("#capture").addEventListener("click", () => {
           capture(mindarThree);
         });
+
+        document.querySelector("#switch").addEventListener("click", () => {
+          mindarThree.switchCamera();
+        });
     
         await mindarThree.start();
         renderer.setAnimationLoop(() => {
