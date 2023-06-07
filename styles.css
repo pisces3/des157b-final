@@ -117,8 +117,13 @@ button:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 10px;
-    font-size: 12px;
+    padding:15px;
+    margin:auto;
+    border-radius: 50px;
+}
+
+.fa-house{
+    font-size: 18px;
 }
 
 /* info section */
