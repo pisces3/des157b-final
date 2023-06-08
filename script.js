@@ -149,7 +149,13 @@ const THREE = window.MINDAR.FACE.THREE;
     <h2>${jsonData[value].title}</h2>
     <p>${jsonData[value].p1}</p>
     <p>${jsonData[value].p2}</p>
-    <p>${jsonData[value].p3}</p>`
+    <p>${jsonData[value].p3}</p>
+    <p class= "bold">See it Featured on the Seal</p>
+    <img src="images/${jsonData[value].sealimg}" alt="${jsonData[value].title}" width="300" height="160" class= "sealImg">
+    <p class= "bold">For More Information Visit: </p>
+    <ul>
+    <li>${jsonData[value].li1}</li>
+    </ul>`
     // <button class='primary camera' id=${jsonData[value].filter}>Launch Face Filter</button>
     document.querySelector("#placetext").innerHTML = text;
     hideButtons();

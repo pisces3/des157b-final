@@ -7,8 +7,8 @@
         "p2" : "Carved in clay and cast in bronze, the seal, modeled after a bike wheel illustrates the various aspects of Davis life and history. ",
         "p3": "Some events that illustrated are the founding of Davis as Davisville, the introduction of the railroads and Interstate 80, and the founding of UC Davis as the University Farm.",
         "img": "seal.png", 
-        "latitude": "38.5432",
-        "longitude": "-121.7406",
+        "sealimg": "sealSeal.png", 
+        "li1": "<a href = 'https://www.cityofdavis.org/city-hall/city-manager-s-office/arts-culture/davis-centennial-seal'>City of Davis Website</a>", 
         "filter": "seal"
     },
 
@@ -20,8 +20,8 @@
         "p2" : "Davis is known for it's bicycle friendly community and city. Its flat landscape makes it the best environment for biking.",
         "p3": "Did you know that the very first official bike lane was created in Davis in 1967?",
         "img": "bike.png",
-        "latitude": "38.5443",
-        "longitude": "-121.7443",
+        "sealimg": "bikeSeal.png", 
+        "li1": "<a href = 'https://usbhof.org/' target='blank'>US Bicycling Hall of Fame Website</a>", 
         "filter": "bike"
     },
 
@@ -33,8 +33,8 @@
         "p2" : "It is also close to many local restaurants and businesses like Burgers and Brew, Crepeville, and Yoloberry.",
         "p3": "Have visited the carousel in Central Park?",
         "img": "centralpark.png",
-        "latitude": "38.5453",
-        "longitude": "-121.7445",
+        "sealimg": "centralparkSeal.png", 
+        "li1": "<a href = 'https://www.davisfarmersmarket.org/' target='blank'>Davis Farmer's Market</a>", 
         "filter": "centralpark"
     }, 
 
@@ -46,8 +46,8 @@
         "p2" : "Eggheads were meant to add some fun and a bit of quirkiness to college life. They are one of the most unique and defining monuments on the UC Davis campus.",
         "p3": "Which egghead is your favorite?",
         "img": "egghead.png",
-        "latitude": "38.5419",
-        "longitude": "-121.7478",
+        "sealimg": "eggheadSeal.png", 
+        "li1": "<a href = 'https://www.ucdavis.edu/campus-life/arts-culture/eggheads' target='blank'>UC Davis Egghead Website</a>", 
         "filter": "egghead"
     },
 
@@ -59,8 +59,8 @@
         "p2" : "This railroad station made it easier for students, goods, and workers to come to Davis and grow the city. Currently, this station continues to connect Davis to the Bay Area and Sacramento city areas as the Amtrak Station.",
         "p3": "Have you ever taken the train before?",
         "img": "amtrak.png",
-        "latitude": "38.5436",
-        "longitude": "-121.7376",
+        "sealimg": "amtrakSeal.png", 
+        "li1": "<a href = 'https://www.greatamericanstations.com/stations/davis-ca-dav/' target='blank'>History of Davis Station</a>", 
         "filter": "amtrak"
     },
 
@@ -72,8 +72,8 @@
         "p2" : "Some popular spots include the redwood grove, Lake Spafford, and the Arboretum Teaching Nursery.",
         "p3": "You will often spot students and locals taking a walk, bike, or a rest here.",
         "img": "arboretum.png",
-        "latitude": "38.5402",
-        "longitude": "-121.7417",
+        "sealimg": "arboretumSeal.png", 
+        "li1": "<a href = 'https://arboretum.ucdavis.edu/visit' target='blank'>Arboretum Website</a>", 
         "filter": "arboretum"
     }
 
