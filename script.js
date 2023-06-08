@@ -319,6 +319,16 @@ const THREE = window.MINDAR.FACE.THREE;
           faceMesh.material.needsUpdate = true;
         });
       }
+      if (arbs.className = 'primary camera showing') {
+        //change bicycle seal filter
+        arbs.addEventListener('click', async () => {
+         console.log('clicking market');
+         texture = await loadTexture('assets/arb.png');
+         console.log(texture);
+         faceMesh.material.map = texture;
+         faceMesh.material.needsUpdate = true;
+       });
+     }
       else {
         faceMesh.material.map = null;
         faceMesh.material.needsUpdate = true;
