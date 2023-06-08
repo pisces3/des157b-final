@@ -7,6 +7,9 @@ const THREE = window.MINDAR.FACE.THREE;
 
     //Data
     let globalData; 
+    let mindarThree;
+    let texture;
+    let faceMesh;
 
     async function getData(){
     const myData = await fetch ("data.json");
@@ -57,21 +60,6 @@ const THREE = window.MINDAR.FACE.THREE;
       mapPage.style.opacity = '0';
       placeinfo.className = "hidden";
     })
-
-  //   function backButton (){
-  //     for (let i = 0; i < sections.length; i++) {
-  //       if (sections[i].id === 'mappage') {
-  //           backHome.className = 'showing';
-  //         } else{
-  //           backHome.className = 'hidden';
-  //         }
-  //   }
-  // }
-
-  //   // backButton();
-
-    
-
     // Davis Leaflet Map
     var map = L.map('map').setView([38.544087, -121.743363],15);
 
@@ -97,27 +85,6 @@ const THREE = window.MINDAR.FACE.THREE;
 
     var amtrak = L.marker([38.5436, -121.7376]).addTo(map);
     amtrak.bindPopup(`<img src= "images/amtrak.png" class"popupimg" width ="180"><br><b>Southern Pacific Railroad Station</b><br>840 2nd St, Davis, CA 95616<br>Currently the Amtrak Station and historically the Southern Pacific Railroad Station.<br><button class= "primary popBTN" id="amtrak">I'm Here</button>`);
-
-  // Json Data 
-
-    // function createEvents(){
-    //     const buttons = document.querySelectorAll('.popBTN');
-    //     console.log(buttons);
-    
-    //     for (const button of buttons){
-    //         button.addEventListener('click', function(event){
-    //             const id = event.target.id; 
-    //             console.log(id)
-    //             updateInterface(id, globalData);
-    //             placeinfo.className = "showing";
-    //             mapPage.className = "hidden";
-    //             mapPage.style.opacity = '0';
-    //             console.log('clicking popbtn');
-    //         })
-    //     }
-    // }
-
-    // <img src="images/${jsonData[value].img}" alt="${jsonData[value].alt}"></img>
 
    // from glenda: use event delegation (adding a click listener to the document and then checking what was clicked on) bc the popBTNs are not in the DOM until the marker is clicked. I found this out by using "inspect" and watching the DOM elements change. I can explain more when we talk next.
    document.addEventListener('click', function(event){
@@ -156,28 +123,33 @@ const THREE = window.MINDAR.FACE.THREE;
     <ul>
     <li>${jsonData[value].li1}</li>
     </ul>`
-    // <button class='primary camera' id=${jsonData[value].filter}>Launch Face Filter</button>
     document.querySelector("#placetext").innerHTML = text;
     hideButtons();
 
     //changes which button is showing depending on what content is seen
     if (jsonData[value].filter == 'seal') {
       centennial.className = 'primary camera showing';
+      centennial.addEventListener('click', sealFilter());
     }
     else if (jsonData[value].filter == 'bike') {
       bicycle.className = 'primary camera showing';
+      bicycle.addEventListener('click', bikeFilter());
     }
     else if (jsonData[value].filter == 'centralpark') {
       market.className = 'primary camera showing';
+      market.addEventListener('click', marketFilter());
     }
     else if (jsonData[value].filter == 'egghead') {
       eggHead.className = 'primary camera showing';
+      eggHead.addEventListener('click', eggHeadFilter());
     }
     else if (jsonData[value].filter == 'amtrak') {
       railroad.className = 'primary camera showing';
+      railroad.addEventListener('click', railroadFilter());
     }
     else if (jsonData[value].filter == 'arboretum') {
       arbs.className = 'primary camera showing';
+      arbs.addEventListener('click', arbsFilter());
     }
 
 }
@@ -223,12 +195,13 @@ const THREE = window.MINDAR.FACE.THREE;
       link.click();
     }
 
+   
+
     document.addEventListener('DOMContentLoaded', async () => {
-      let mindarThree;
-      let texture;
-      let faceMesh;
+      
     
       const start = async () => {
+        
         mindarThree = new window.MINDAR.FACE.MindARThree({
           container: faceFilterSection,
         });
@@ -238,10 +211,12 @@ const THREE = window.MINDAR.FACE.THREE;
         scene.add(light);
     
         faceMesh = mindarThree.addFaceMesh();
-        texture = await loadTexture("assets/bike.png");
+        // texture = await loadTexture("assets/bike.png");
     
-        faceMesh.material.transparent = true;
-        faceMesh.material.needsUpdate = true;
+        faceMesh.material = new THREE.MeshBasicMaterial({
+          map: texture,
+          transparent: true,
+        });
     
         scene.add(faceMesh);
         document.querySelector("#capture").addEventListener("click", () => {
@@ -267,85 +242,285 @@ const THREE = window.MINDAR.FACE.THREE;
           start();
         }
       });
+    });
 
-      if (centennial.className === 'primary camera showing') {
-        // Change centennial seal filter
-        centennial.addEventListener('click', async () => {
-          console.log('clicking seal');
-          removeEventListeners();
-          texture = await loadTexture('assets/seal.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else if (market.className === 'primary camera showing') {
-        // Change farmers market seal filter
-        market.addEventListener('click', async () => {
-          console.log('clicking market');
-          removeEventListeners();
-          texture = await loadTexture('assets/market.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else if (railroad.className === 'primary camera showing') {
-        // Change railroad seal filter
-        railroad.addEventListener('click', async () => {
-          console.log('clicking railroad');
-          removeEventListeners();
-          texture = await loadTexture('assets/railroad.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else if (bicycle.className === 'primary camera showing') {
-        // Change bicycle seal filter
-        bicycle.addEventListener('click', async () => {
-          console.log('clicking bicycle');
-          removeEventListeners();
-          texture = await loadTexture('assets/bike.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else if (eggHead.className === 'primary camera showing') {
-        // Change eggHead seal filter
-        eggHead.addEventListener('click', async () => {
-          console.log('clicking eggHead');
-          removeEventListeners();
-          texture = await loadTexture('assets/egghead.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else if (arbs.className === 'primary camera showing') {
-        // Change arbs seal filter
-        arbs.addEventListener('click', async () => {
-          console.log('clicking arbs');
-          removeEventListeners();
-          texture = await loadTexture('assets/arb.png');
-          faceMesh.material.map = texture;
-          faceMesh.material.needsUpdate = true;
-        });
-      }
-      else {
-        removeEventListeners();
-        faceMesh.material.map = null;
+    function removeEventListeners() {
+      centennial.removeEventListener('click', sealFilter);
+      market.removeEventListener('click');
+      railroad.removeEventListener('click');
+      bicycle.removeEventListener('click');
+      eggHead.removeEventListener('click');
+      arbs.removeEventListener('click');
+    }
+
+    async function sealFilter() {
+      console.log('clicking seal');
+      removeEventListeners();
+      texture = await loadTexture('assets/seal.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
         faceMesh.material.needsUpdate = true;
       }
-      
-      function removeEventListeners() {
-        centennial.removeEventListener('click');
-        market.removeEventListener('click');
-        railroad.removeEventListener('click');
-        bicycle.removeEventListener('click');
-        eggHead.removeEventListener('click');
-        arbs.removeEventListener('click');
-      }
-      
-     
+    }
 
-    });
+    async function bikeFilter() {
+      console.log('clicking bike');
+      removeEventListeners();
+      texture = await loadTexture('assets/bike.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      }
+    }
+
+    async function marketFilter() {
+      console.log('clicking market');
+      removeEventListeners();
+      texture = await loadTexture('assets/market.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      }
+    }
+
+    async function eggHeadFilter() {
+      console.log('clicking egghead');
+      removeEventListeners();
+      texture = await loadTexture('assets/egghead.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      }
+    }
+
+    async function railroadFilter() {
+      console.log('clicking railroad');
+      removeEventListeners();
+      texture = await loadTexture('assets/railroad.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      }
+    }
+
+    async function arbsFilter() {
+      console.log('clicking arbs');
+      removeEventListeners();
+      texture = await loadTexture('assets/arb.png');
+      if (faceMesh) {
+        faceMesh.material.map = texture;
+        faceMesh.material.needsUpdate = true;
+      }
+    }
+
+    // if (centennial.className = 'primary camera showing') {
+    //   // Change centennial seal filter
+    //   centennial.addEventListener('click', async () => {
+    //     console.log('clicking seal');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/seal.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else if (market.className = 'primary camera showing') {
+    //   // Change farmers market seal filter
+    //   market.addEventListener('click', async () => {
+    //     console.log('clicking market');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/market.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else if (railroad.className = 'primary camera showing') {
+    //   // Change railroad seal filter
+    //   railroad.addEventListener('click', async () => {
+    //     console.log('clicking railroad');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/railroad.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else if (bicycle.className = 'primary camera showing') {
+    //   // Change bicycle seal filter
+    //   bicycle.addEventListener('click', async () => {
+    //     console.log('clicking bicycle');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/bike.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else if (eggHead.className = 'primary camera showing') {
+    //   // Change eggHead seal filter
+    //   eggHead.addEventListener('click', async () => {
+    //     console.log('clicking eggHead');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/egghead.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else if (arbs.className === 'primary camera showing') {
+    //   // Change arbs seal filter
+    //   arbs.addEventListener('click', async () => {
+    //     console.log('clicking arbs');
+    //     // removeEventListeners();
+    //     texture = await loadTexture('assets/arb.png');
+    //     faceMesh.material.map = texture;
+    //     faceMesh.material.needsUpdate = true;
+    //   });
+    // }
+    // else {
+    //   removeEventListeners();
+    //   if (faceMesh) {
+    //     faceMesh.material.map = null;
+    //     faceMesh.material.needsUpdate = true;
+    //   }
+    // }
+
+
+    // NOT WORKING
+    // document.addEventListener('DOMContentLoaded', async () => {
+    //   let mindarThree;
+    //   let texture;
+    //   let faceMesh;
+      
+    //   const start = async () => {
+    //     mindarThree = new window.MINDAR.FACE.MindARThree({
+    //       container: faceFilterSection,
+    //     });
+    
+    //     const { renderer, scene, camera } = mindarThree;
+    
+    //     const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+    //     scene.add(light);
+    
+    //     faceMesh = mindarThree.addFaceMesh();
+    //     texture = await loadTexture("assets/bike.png");
+    //     faceMesh.material.transparent = true;
+    //     faceMesh.material.needsUpdate = true;
+    //     scene.add(faceMesh);
+    
+    //     document.querySelector("#capture").addEventListener("click", () => {
+    //       capture(mindarThree);
+    //     });
+    
+    //     await mindarThree.start();
+    
+    //     renderer.setAnimationLoop(() => {
+    //       renderer.render(scene, camera);
+    //     });
+    //   };
+    
+    //   document.addEventListener('click', (event) => {
+    //     if (event.target.classList.contains('camera')) {
+    //       console.log('clicking face camera');
+    //       faceFilterSection.className = 'showing';
+    //       homePage.className = 'hidden';
+    //       placeinfo.className = 'hidden';
+    //       start();
+    //     }
+    //   });
+    
+    //   function removeEventListeners() {
+    //     centennial.removeEventListener('click', centennialClickHandler);
+    //     market.removeEventListener('click', marketClickHandler);
+    //     railroad.removeEventListener('click', railroadClickHandler);
+    //     bicycle.removeEventListener('click', bicycleClickHandler);
+    //     eggHead.removeEventListener('click', eggHeadClickHandler);
+    //     arbs.removeEventListener('click', arbsClickHandler);
+    //   }
+    
+    //   const centennialClickHandler = async () => {
+    //     console.log('clicking seal');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/seal.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   const marketClickHandler = async () => {
+    //     console.log('clicking market');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/market.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   const railroadClickHandler = async () => {
+    //     console.log('clicking railroad');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/railroad.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   const bicycleClickHandler = async () => {
+    //     console.log('clicking bicycle');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/bike.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   const eggHeadClickHandler = async () => {
+    //     console.log('clicking eggHead');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/egghead.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   const arbsClickHandler = async () => {
+    //     console.log('clicking arbs');
+    //     removeEventListeners();
+    //     texture = await loadTexture('assets/arb.png');
+    //     if (faceMesh) {
+    //       faceMesh.material.map = texture;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   };
+    
+    //   if (centennial.className === 'primary camera showing') {
+    //     centennial.addEventListener('click', centennialClickHandler);
+    //   }
+    //   else if (market.className === 'primary camera showing') {
+    //     market.addEventListener('click', marketClickHandler);
+    //   }
+    //   else if (railroad.className === 'primary camera showing') {
+    //     railroad.addEventListener('click', railroadClickHandler);
+    //   }
+    //   else if (bicycle.className === 'primary camera showing') {
+    //     bicycle.addEventListener('click', bicycleClickHandler);
+    //   }
+    //   else if (eggHead.className === 'primary camera showing') {
+    //     eggHead.addEventListener('click', eggHeadClickHandler);
+    //   }
+    //   else if (arbs.className === 'primary camera showing') {
+    //     arbs.addEventListener('click', arbsClickHandler);
+    //   }
+    //   else {
+    //     removeEventListeners();
+    //     if (faceMesh) {
+    //       faceMesh.material.map = null;
+    //       faceMesh.material.needsUpdate = true;
+    //     }
+    //   }
+    // });
+    
     
       
 
