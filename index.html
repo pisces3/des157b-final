@@ -39,13 +39,18 @@
 </head>
 <body>
     <button id="backHome">
-        <i class="fa-solid fa-house fa-sm" style="color: #32C57E;"></i>
+        <i class="fa-solid fa-house fa-sm"></i>
+    </button>
+
+    <button id="instruct">
+        <i class="fas fa-info-circle"></i>    
     </button>
 
     <section id="homepage" class="showing">
         <h1>Davis<br>Destinations</h1>
         <p class="bold">Visit destinations featured in the Davis Centennial Seal!<p>
-        <p>Explore the map, visit a location, click the pop up to learn more, and take a photo with a themed face filter.</p>
+
+        <!-- <p>Explore the map, visit a location, click the pop up to learn more, and take a photo with a themed face filter.</p> -->
 
             <!-- Explore the map to learn more about each Davis location, complete with a unique face filter! -->
 
@@ -59,20 +64,19 @@
 
         <img src="images/responsive-grass.png" id="grass">
 
+    </section>
 
-        <!-- <section id="user-test">
-            <button class="primary camera hidden" id="sealBTN">Centennial Seal</button>
-            <button class="secondary camera hidden" id="centralparkBTN">Farmer's Market</button>
-            <button class="primary camera hidden" id="arbBTN">Arboretum</button>
-            <button class="secondary camera hidden" id="amtrakBTN">Railroad Station</button>
-            <button class="primary camera hidden" id="bikeBTN">US Bicycling</button>
-            <button class="secondary camera hidden" id="eggheadBTN">Egghead</button>
-        </section> -->
-
-        <!-- <div>
-            <img src="images/responsive-grass.svg" alt="fake grass graphic" id="grass">
-        </div> -->
-
+    <section id="popup" class="hidden">
+        <button id="close">X</button>
+        <h3>Instructions</h3>
+        <ul>
+            <li>Explore the Map</li>
+            <li>Visit a Davis Destination</li>
+            <li>Click "I'm Here" when you arrive</li>
+            <li>Learn more about the destination</li>
+            <li>Launch the themed face filter</li>
+            <li>Snap a picture!</li>
+        </ul>
     </section>
 
     <section id="mappage" class="showing">
@@ -86,12 +90,12 @@
         <div id="placetext">
         </div>
         <!-- <button class="primary camera" id="BTN">Launch Face Filter</button>` -->
-        <button class="primary camera hidden" id="sealBTN">Centennial Seal</button>
-        <button class="primary camera hidden" id="centralparkBTN">Farmer's Market</button>
-        <button class="primary camera hidden" id="arbBTN">Arboretum</button>
-        <button class="primary camera hidden" id="amtrakBTN">Railroad Station</button>
-        <button class="primary camera hidden" id="bikeBTN">US Bicycling</button>
-        <button class="primary camera hidden" id="eggheadBTN">Egghead</button>
+        <button class="primary camera hidden" id="sealBTN">Launch Seal Filter</button>
+        <button class="primary camera hidden" id="centralparkBTN">Launch Park Filter</button>
+        <button class="primary camera hidden" id="arbBTN">Launch Arboretum Filter</button>
+        <button class="primary camera hidden" id="amtrakBTN">Launch Railroad Filter</button>
+        <button class="primary camera hidden" id="bikeBTN">Launch Bike Filter</button>
+        <button class="primary camera hidden" id="eggheadBTN">Launch Egghead Filter</button>
         <button class="secondary" id="back">Back</button>`
     </section>
 

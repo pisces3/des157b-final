@@ -16,8 +16,10 @@ const THREE = window.MINDAR.FACE.THREE;
 	//Pages
 	const homePage = document.querySelector('#homepage');
 	const mapPage = document.querySelector('#mappage');
-	const popup = document.querySelectorAll('.popup');
+	const popup = document.querySelector('#popup');
 	const placeinfo = document.querySelector('#placeinfo');
+	const closeBtn = document.querySelector('#close');
+	const info = document.querySelector('#instruct');
 
 	//Buttons
 	const startBtn = document.querySelector('#homepage .primary');
@@ -35,10 +37,12 @@ const THREE = window.MINDAR.FACE.THREE;
 	const eggHead = document.querySelector('#eggheadBTN');
 
 	// Show/hide functions
+	
 	startBtn.addEventListener('click', function () {
 		homePage.className = 'hidden';
 		mapPage.className = 'showing';
 		mapPage.style.opacity = '1';
+		instruction();
 	});
 
 	back.addEventListener('click', function () {
@@ -52,6 +56,28 @@ const THREE = window.MINDAR.FACE.THREE;
 		mapPage.style.opacity = '0';
 		placeinfo.className = 'hidden';
 	});
+
+	closeBtn.addEventListener('click', function() {
+		popup.className = 'hidden';
+	});
+
+	info.addEventListener('click', function() {
+		popup.className = 'showing';
+	})
+
+	//show instruction popup
+	let popupTimeout;
+	function instruction() {
+		popup.className = 'showing';
+		popupTimeout = setTimeout(closeInstruct, 2000);
+	}
+	
+	function closeInstruct() {
+		popup.className = 'hidden';
+	}
+	  
+	  // To clear the timeout if needed
+	clearTimeout(popupTimeout);
 	// Davis Leaflet Map
 	var map = L.map('map').setView([38.544087, -121.743363], 15);
 
