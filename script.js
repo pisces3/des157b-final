@@ -248,9 +248,9 @@ const THREE = window.MINDAR.FACE.THREE;
           capture(mindarThree);
         });
 
-        document.querySelector("#switch").addEventListener("click", () => {
-          mindarThree.switchCamera();
-        });
+        // document.querySelector("#switch").addEventListener("click", () => {
+        //   mindarThree.switchCamera();
+        // });
     
         await mindarThree.start();
         renderer.setAnimationLoop(() => {
