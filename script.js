@@ -268,71 +268,81 @@ const THREE = window.MINDAR.FACE.THREE;
         }
       });
 
-      if (centennial.className = 'primary camera showing') {
-          //change centennial seal filter
-          centennial.addEventListener('click', async () => {
+      if (centennial.className === 'primary camera showing') {
+        // Change centennial seal filter
+        centennial.addEventListener('click', async () => {
           console.log('clicking seal');
+          removeEventListeners();
           texture = await loadTexture('assets/seal.png');
-          console.log(texture);
           faceMesh.material.map = texture;
           faceMesh.material.needsUpdate = true;
         });
       }
-      if (market.className = 'primary camera showing') {
-          //change farmers market seal filter
-          market.addEventListener('click', async () => {
+      else if (market.className === 'primary camera showing') {
+        // Change farmers market seal filter
+        market.addEventListener('click', async () => {
           console.log('clicking market');
+          removeEventListeners();
           texture = await loadTexture('assets/market.png');
-          console.log(texture);
           faceMesh.material.map = texture;
           faceMesh.material.needsUpdate = true;
         });
       }
-      if (railroad.className = 'primary camera showing') {
-              //change farmers market seal filter
+      else if (railroad.className === 'primary camera showing') {
+        // Change railroad seal filter
         railroad.addEventListener('click', async () => {
           console.log('clicking railroad');
+          removeEventListeners();
           texture = await loadTexture('assets/railroad.png');
-          console.log(texture);
           faceMesh.material.map = texture;
           faceMesh.material.needsUpdate = true;
         });
       }
-
-      if (bicycle.className = 'primary camera showing') {
-         //change bicycle seal filter
-          bicycle.addEventListener('click', async () => {
-          console.log('clicking market');
+      else if (bicycle.className === 'primary camera showing') {
+        // Change bicycle seal filter
+        bicycle.addEventListener('click', async () => {
+          console.log('clicking bicycle');
+          removeEventListeners();
           texture = await loadTexture('assets/bike.png');
-          console.log(texture);
           faceMesh.material.map = texture;
           faceMesh.material.needsUpdate = true;
         });
       }
-      if (eggHead.className = 'primary camera showing') {
-         //change bicycle seal filter
-          eggHead.addEventListener('click', async () => {
-          console.log('clicking market');
+      else if (eggHead.className === 'primary camera showing') {
+        // Change eggHead seal filter
+        eggHead.addEventListener('click', async () => {
+          console.log('clicking eggHead');
+          removeEventListeners();
           texture = await loadTexture('assets/egghead.png');
-          console.log(texture);
           faceMesh.material.map = texture;
           faceMesh.material.needsUpdate = true;
         });
       }
-      if (arbs.className = 'primary camera showing') {
-        //change bicycle seal filter
+      else if (arbs.className === 'primary camera showing') {
+        // Change arbs seal filter
         arbs.addEventListener('click', async () => {
-         console.log('clicking market');
-         texture = await loadTexture('assets/arb.png');
-         console.log(texture);
-         faceMesh.material.map = texture;
-         faceMesh.material.needsUpdate = true;
-       });
-     }
+          console.log('clicking arbs');
+          removeEventListeners();
+          texture = await loadTexture('assets/arb.png');
+          faceMesh.material.map = texture;
+          faceMesh.material.needsUpdate = true;
+        });
+      }
       else {
+        removeEventListeners();
         faceMesh.material.map = null;
         faceMesh.material.needsUpdate = true;
       }
+      
+      function removeEventListeners() {
+        centennial.removeEventListener('click');
+        market.removeEventListener('click');
+        railroad.removeEventListener('click');
+        bicycle.removeEventListener('click');
+        eggHead.removeEventListener('click');
+        arbs.removeEventListener('click');
+      }
+      
      
 
     });
